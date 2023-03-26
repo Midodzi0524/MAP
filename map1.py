@@ -1,5 +1,7 @@
 import folium 
 import pandas as pd
+
+## create a map
 map = folium.Map(location=[35, -89], zoom_start= 6)
 
 data = pd.read_csv("Volcanoes.txt")
@@ -22,7 +24,7 @@ for lt,ln,el in zip(lat,lon,elev):
 
 fgp = folium.FeatureGroup(name="Population")
 fgp.add_child(folium.GeoJson(data=open("world.json", 'r', encoding='utf-8-sig').read(), 
-style_function = lambda x: {'fillcolor':'green' if x['properties']['POP2005'] < 1000000
+style_function = lambda x: {'fillcolor':'blue' if x['properties']['POP2005'] < 1000000
 else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'}))
 
 map.add_child(fgv)
