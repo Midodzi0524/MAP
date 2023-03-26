@@ -2,7 +2,7 @@ import folium
 import pandas as pd
 
 ## create a map
-map = folium.Map(location=[35, -89], zoom_start= 6)
+map = folium.Map(location=[30, -89], zoom_start= 8)
 
 data = pd.read_csv("Volcanoes.txt")
 lat = list(data["LAT"])
